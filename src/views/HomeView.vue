@@ -3,7 +3,7 @@
     <el-container>
       <!-- 首页共有头部 -->
 
-      <el-header style="height: 125px; padding: 0;">
+      <el-header style="height: 132px; padding: 0;">
         <!-- 首页头部顶行-->
         <div class="header-div">
           <span><a href="/" class="header-div-a">豆豆</a></span>
