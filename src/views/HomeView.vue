@@ -21,25 +21,27 @@
         </div>
         <div style="background-color: #F0F3F5;">
           <el-row :gutter="10" style="width: 1200px;margin:0 auto;">
-            <el-col :span="18">
-              <span style="color:#258DCD;font-size: 30px;margin: 50px 100px 50px 50px;line-height:70px;" >豆豆电影</span>
-              <el-input placeholder="搜索电影、电视剧、综艺、影人" style="width: 500px;margin-bottom:10px;">
+            <el-col :span="18" >
+              <span style="color:#258DCD;font-size: 35px;margin: 50px 100px 50px 50px;line-height:70px;" >豆豆电影</span>
+              <el-input placeholder="搜索电影、电视剧、综艺、影人" style="width: 500px;margin-bottom:12px;">
                 <template #append>
                   <el-button :icon="Search"></el-button>
                 </template>
               </el-input>
+              <el-menu mode="horizontal" style="background-color: #F0F3F5;height:34px; margin: 20px auto 0px;">
+                <el-menu-item style="margin-left:35px;">影讯&购票</el-menu-item>
+                <el-menu-item>选电影</el-menu-item>
+                <el-menu-item>电视剧</el-menu-item>
+                <el-menu-item>排行榜</el-menu-item>
+                <el-menu-item>影评</el-menu-item>
+                <el-menu-item>2023年度榜单</el-menu-item>
+                <el-menu-item>2023年度报告</el-menu-item>
+              </el-menu>
             </el-col>
-            <el-col :span="6">10</el-col>
+            <el-col :span="6">
+              <img src="/imgs/annual_2023.png" style="height:120px; ">
+            </el-col>
           </el-row>
-          <el-menu mode="horizontal" style="background-color: #F0F3F5; height:25px;width:1200px;margin: 0 auto;">
-            <el-menu-item style="margin-left:35px;">影讯&购票</el-menu-item>
-            <el-menu-item>选电影</el-menu-item>
-            <el-menu-item>电视剧</el-menu-item>
-            <el-menu-item>排行榜</el-menu-item>
-            <el-menu-item>影评</el-menu-item>
-            <el-menu-item>2023年度榜单</el-menu-item>
-            <el-menu-item>2023年度报告</el-menu-item>
-          </el-menu>
         </div>
 
       </el-header>
