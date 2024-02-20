@@ -31,6 +31,15 @@
             </el-col>
             <el-col :span="6">10</el-col>
           </el-row>
+          <el-menu mode="horizontal" style="background-color: #F0F3F5; height:25px;width:1200px;margin: 0 auto;">
+            <el-menu-item style="margin-left:35px;">影讯&购票</el-menu-item>
+            <el-menu-item>选电影</el-menu-item>
+            <el-menu-item>电视剧</el-menu-item>
+            <el-menu-item>排行榜</el-menu-item>
+            <el-menu-item>影评</el-menu-item>
+            <el-menu-item>2023年度榜单</el-menu-item>
+            <el-menu-item>2023年度报告</el-menu-item>
+          </el-menu>
         </div>
 
       </el-header>
