@@ -1,9 +1,9 @@
 <template>
   <div class="common-layout">
     <el-container>
-      <!-- 首页头部 -->
+      <!-- 首页共有头部 -->
 
-      <el-header style="height: 80px; padding: 0;">
+      <el-header style="height: 125px; padding: 0;">
         <!-- 首页头部顶行-->
         <div class="header-div">
           <span><a href="/" class="header-div-a">豆豆</a></span>
@@ -50,13 +50,20 @@
 
       <el-main><router-view/></el-main>
 
+      <!--首页共有页尾-->
       <el-footer style="height: 80px; padding: 0;background-color:#fff;">
         <div class="header-div">
-          <span><a href="/" class="header-div-a">© 2005－2024 doudou.com, all rights reserved 豆豆科技有限公司</a></span>
+          <span style="margin:0 10px;text-decoration: none;color: #fff;line-height: 28px;font-weight: lighter;">
+            © 2000－2024 doudou.com, all rights reserved 佛山祖庙中心 招泽标
+          </span>
           <span style="position:absolute;right:0;">
-            <a href="/" class="header-div-a">关于豆瓣 |</a>
-            <a href="/" class="header-div-a">在豆瓣工作 |</a>
-            <a href="/" class="header-div-a">联系我们 |</a>
+            <a href="/" class="header-div-a">关于豆瓣</a>|
+            <a href="/" class="header-div-a">在豆瓣工作</a>|
+            <a href="/" class="header-div-a">联系我们</a>|
+            <a href="/" class="header-div-a">法律声明</a>|
+            <a href="/" class="header-div-a">帮助中心</a>|
+            <a href="/" class="header-div-a">移动应用</a>|
+            <a href="/" class="header-div-a">豆瓣广告</a>
           </span>
         </div>
       </el-footer>

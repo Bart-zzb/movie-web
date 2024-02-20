@@ -5,7 +5,11 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: HomeView,
+    redirect:'/index',
+    children:[
+      {path:'index',component:()=>import('../views/Home/IndexView')},
+    ]
   }
 ]
 
