@@ -54,12 +54,15 @@
           <span style="font-size: 20px; line-height: 50px;">热门推荐</span>
         </el-menu>
         <el-carousel>
-          <el-carousel-item>
+          <el-carousel-item v-for="item in bannerArr">
             <el-row :gutter="10">
               <el-col :span="12">
-                <img src="/imgs/banner1.jpg" width="100%">
+                <a href="#"><img :src="item.imgUrl" width="100%"></a>
               </el-col>
-              <el-col :span="12"></el-col>
+              <el-col :span="12">
+                <p style="font-size: 25px;font-weight: bold;margin:50px 14px 30px 14px;"><a href="#" style="text-decoration: none;">{{item.title}}</a></p>
+                <p style="font-size: 13px;margin:50px 14px 30px 14px;">{{item.content}}</p>
+              </el-col>
             </el-row>
           </el-carousel-item>
         </el-carousel>
@@ -115,7 +118,21 @@
       </el-col>
 
       <!--首页右侧部分-->
-      <el-col :span="6"></el-col>
+      <el-col :span="6">
+        <el-menu>
+          <p>一周口碑榜</p>
+          <el-menu-item index="1">首尔之春</el-menu-item>
+          <el-menu-item index="2">机器人之梦</el-menu-item>
+          <el-menu-item index="3">梦之歌</el-menu-item>
+          <el-menu-item index="4">女气</el-menu-item>
+          <el-menu-item index="5">流行乐最传奇一夜</el-menu-item>
+          <el-menu-item index="6">农民</el-menu-item>
+          <el-menu-item index="7">如何拯救一名死去的朋友</el-menu-item>
+          <el-menu-item index="8">都是陌生人</el-menu-item>
+          <el-menu-item index="9">目中无人2</el-menu-item>
+          <el-menu-item index="10">动物王国</el-menu-item>
+        </el-menu>
+      </el-col>
     </el-row>
   </div>
 </template>
@@ -155,6 +172,10 @@
       {imgUrl:'/imgs/movie8.jpg',title:'金手指',score:'6.2', style:'font-weight:bold;color:orange'}
   ]);
 
+  const bannerArr = ref([
+    {imgUrl:'/imgs/banner1.jpg',title:'「豆瓣2023年度电影榜单」正式上线',content:'点击查看完整榜单，开启全年电影、剧集、综艺大赏。'},
+    {imgUrl:'/imgs/banner2.jpg',title:'《死侍3》 首支中字预告',content:'死侍与金刚狼回归! 7月26日北美上映.'}
+  ]);
 
 </script>
 
