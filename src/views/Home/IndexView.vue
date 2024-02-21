@@ -52,12 +52,17 @@
         <!--首页热门推荐-->
         <el-menu mode="horizontal" style="height: 50px;margin:30px auto;">
           <span style="font-size: 20px; line-height: 50px;">热门推荐</span>
-          <el-carousel>
-            <el-carousel-item>
-
-            </el-carousel-item>
-          </el-carousel>
         </el-menu>
+        <el-carousel>
+          <el-carousel-item>
+            <el-row :gutter="10">
+              <el-col :span="12">
+                <img src="/imgs/banner1.jpg" width="100%">
+              </el-col>
+              <el-col :span="12"></el-col>
+            </el-row>
+          </el-carousel-item>
+        </el-carousel>
 
         <!--首页评论区-->
         <el-menu mode="horizontal" style="height: 50px;margin:30px auto 0;">
@@ -149,6 +154,8 @@
       {imgUrl:'/imgs/movie7.jpg',title:'熊出没·逆转时空',score:'6.9', style:'font-weight:bold;color:orange'},
       {imgUrl:'/imgs/movie8.jpg',title:'金手指',score:'6.2', style:'font-weight:bold;color:orange'}
   ]);
+
+
 </script>
 
 <style scoped>
