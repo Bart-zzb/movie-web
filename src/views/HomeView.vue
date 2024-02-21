@@ -54,10 +54,11 @@
       <el-footer style="height: 28px; padding: 0;background-color:#fff;">
         <div class="header-div">
           <span style="margin:0 10px;text-decoration: none;color: #fff;line-height: 28px;font-weight: lighter;">
-            © 2000－2024 doudou.com, all rights reserved                           佛山祖庙中心 招泽标
+            © 2000－2024 doudou.com, all rights reserved 北京豆豆科技有限公司
           </span>
+          <span style="margin-left: 200px;color: #fff;line-height: 28px;font-weight: lighter;">2311 佛山祖庙中心 招泽标</span>
           <span style="position:absolute;right:0;">
-            <a href="/" class="header-div-a">关于豆瓣</a>|
+            <a href="/" class="header-div-a">关于豆豆</a>|
             <a href="/" class="header-div-a">在豆瓣工作</a>|
             <a href="/" class="header-div-a">联系我们</a>|
             <a href="/" class="header-div-a">法律声明</a>|

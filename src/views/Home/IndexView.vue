@@ -16,7 +16,7 @@
             <el-row :gutter="10" >
              <el-col :span="6" v-for="item in p">
                <el-card align="center" style="padding:0;">
-                 <img :src="item.imgUrl" style="width: 130px;height: 180px">
+                 <img :src="item.imgUrl" style="height: 180px">
                  <p style="font-size:15px;margin: 3px auto;text-align: center;">{{item.title}}</p>
                  <p style="font-size:13px;margin: 3px auto;text-align: center;" :style="item.style">{{item.score}}</p>
                  <el-button type="primary" size="small"> 选座购票</el-button>
@@ -120,18 +120,51 @@
       <!--首页右侧部分-->
       <el-col :span="6">
         <el-menu>
-          <p>一周口碑榜</p>
-          <el-menu-item index="1">首尔之春</el-menu-item>
-          <el-menu-item index="2">机器人之梦</el-menu-item>
-          <el-menu-item index="3">梦之歌</el-menu-item>
-          <el-menu-item index="4">女气</el-menu-item>
-          <el-menu-item index="5">流行乐最传奇一夜</el-menu-item>
-          <el-menu-item index="6">农民</el-menu-item>
-          <el-menu-item index="7">如何拯救一名死去的朋友</el-menu-item>
-          <el-menu-item index="8">都是陌生人</el-menu-item>
-          <el-menu-item index="9">目中无人2</el-menu-item>
-          <el-menu-item index="10">动物王国</el-menu-item>
+          <p style="font-size: 20px; line-height: 50px;margin:0px;">一周口碑榜</p>
+          <el-menu-item index="1" style="height: 36px;">1.首尔之春</el-menu-item>
+          <el-menu-item index="2" style="height: 36px;">2.机器人之梦</el-menu-item>
+          <el-menu-item index="3" style="height: 36px;">3.梦之歌</el-menu-item>
+          <el-menu-item index="4" style="height: 36px;">4.女气</el-menu-item>
+          <el-menu-item index="5" style="height: 36px;">5.流行乐最传奇一夜</el-menu-item>
+          <el-menu-item index="6" style="height: 36px;">6.农民</el-menu-item>
+          <el-menu-item index="7" style="height: 36px;">7.如何拯救一名死去的朋友</el-menu-item>
+          <el-menu-item index="8" style="height: 36px;">8.都是陌生人</el-menu-item>
+          <el-menu-item index="9" style="height: 36px;">9.目中无人2</el-menu-item>
+          <el-menu-item index="10" style="height: 36px;">10.动物王国</el-menu-item>
         </el-menu>
+
+        <el-menu>
+          <p style="font-size: 20px; line-height: 50px;margin-top:60px;">热门片单</p>
+          <el-menu-item index="1" style="height: 50px;">现代战争篇</el-menu-item>
+          <el-menu-item index="2" style="height: 50px;">入选IMDB250和豆瓣电影250的电影</el-menu-item>
+        </el-menu>
+
+
+        <p style="font-size: 20px; line-height: 50px;margin-top:60px;">合作联系</p>
+        <hr>
+        <p>电影合作邮箱: movie@doudou.com</p>
+        <p>电视剧合作邮箱: tv@doudou.com</p>
+
+        <p style="font-size: 20px; line-height: 50px;margin-top:60px;">关于我们</p>
+        <hr>
+        <el-row :gutter="10">
+         <el-col :span="6" style="text-align: center">
+           <img src="/imgs/icon1.png" width="40px;">
+           <p style="margin-top: 5px;">微博</p>
+         </el-col>
+          <el-col :span="6">
+            <img src="/imgs/icon2.png" width="40px;">
+            <p style="margin-top: 5px;">微信</p>
+          </el-col>
+          <el-col :span="6">
+            <img src="/imgs/icon3.png" width="40px;">
+            <p style="margin-top: 5px;">瓣嘴</p>
+          </el-col>
+          <el-col :span="6">
+            <img src="/imgs/icon4.png" width="40px;">
+            <p style="margin-top: 5px;">光影club</p>
+          </el-col>
+        </el-row>
       </el-col>
     </el-row>
   </div>
