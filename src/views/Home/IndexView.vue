@@ -21,8 +21,10 @@
                                  :width="200"
                                  trigger="hover"
                                  >
-                   <p>{{item.minute}}&emsp;{{item.area}}</p>
-                   <p>{{item.actor}}</p>
+                   <p><span :style="item.style">{{item.score}}</span>&emsp;{{item.commentCount}}</p>
+                   <p>片长: {{item.minute}}&emsp;{{item.area}}</p>
+                   <p>导演: {{item.director}}</p>
+                   <p>演员: {{item.actor}}</p>
                    <template #reference>
                      <img :src="item.imgUrl" style="width: 130px;height: 180px">
                    </template>
@@ -55,7 +57,11 @@
                                   :title=item.title
                                   :width="200"
                                   trigger="hover"
-                                  :content=item.score>
+                  >
+                    <p><span :style="item.style">{{item.score}}</span>&emsp;{{item.commentCount}}</p>
+                    <p>片长: {{item.minute}}&emsp;{{item.area}}</p>
+                    <p>导演: {{item.director}}</p>
+                    <p>演员: {{item.actor}}</p>
                     <template #reference>
                       <img :src="item.imgUrl" style="width: 130px;height: 180px">
                     </template>
@@ -79,7 +85,7 @@
                 <a href="#"><img :src="item.imgUrl" width="100%"></a>
               </el-col>
               <el-col :span="12">
-                <p style="font-size: 25px;font-weight: bold;margin:50px 14px 30px 14px;"><a href="#" style="text-decoration: none;">{{item.title}}</a></p>
+                <p style="font-size: 25px;font-weight: bold;margin:50px 14px 30px 14px;"><a href="#" style="text-decoration: none;color:#000">{{item.title}}</a></p>
                 <p style="font-size: 13px;margin:50px 14px 30px 14px;">{{item.content}}</p>
               </el-col>
             </el-row>
@@ -100,7 +106,7 @@
             <p style="font-size:20px;margin-top: 10px;margin-bottom: 8px;">{{item.title}}</p>
             <p style="font-size:13px;margin-top: 4px;">{{item.author}}</p>
             <p style="font-size:15px;">{{item.comment}}
-              <a href="#" style="text-decoration: none;">(全文)</a>
+              <a href="#" style="text-decoration: none;color:#000;">(全文)</a>
             </p>
             <hr>
           </el-col>
@@ -167,34 +173,35 @@
 
   const arr = ref([
       [
-        {imgUrl:'/imgs/movie1.jpg',title:'开心超人之时空营救',score:'暂无评分',style:'color:#000'},
-        {imgUrl:'/imgs/movie2.jpg',title:'热辣滚烫',score:'7.9',style:'font-weight:bold;color:orange',actor:'主演: 贾玲 雷佳音 张小斐',minute:'片长: 129分钟',area:'中国大陆'},
-        {imgUrl:'/imgs/movie3.jpg',title:'第二十条',score:'7.7',style:'font-weight:bold;color:orange'},
-        {imgUrl:'/imgs/movie4.jpg',title:'飞驰人生2',score:'暂无评分',style:'color:#000'},
+        {imgUrl:'/imgs/movie1.jpg',title:'开心超人之时空营救',score:'暂无评分',style:'color:#000',commentCount:'',director:'黄伟明',actor:'刘红韵 罗玉婷 严彦子',minute:'102分钟',area:'中国大陆'},
+        {imgUrl:'/imgs/movie2.jpg',title:'热辣滚烫',score:'7.9',style:'font-weight:bold;color:orange',commentCount:'(517080评价)',director:'贾玲',actor:'贾玲 雷佳音 张小斐',minute:'129分钟',area:'中国大陆'},
+        {imgUrl:'/imgs/movie3.jpg',title:'第二十条',score:'7.7',style:'font-weight:bold;color:orange',commentCount:'(325587评价)',director:'张艺谋',actor:'雷佳音 马丽 赵丽颖',minute:'141分钟',area:'中国大陆'},
+        {imgUrl:'/imgs/movie4.jpg',title:'飞驰人生2',score:'暂无评分',style:'color:#000',commentCount:'(383338评价)',director:'韩寒',actor:' 沈腾 范丞丞 尹正 ',minute:'121分钟',area:'中国大陆'},
       ],
       [
-        {imgUrl:'/imgs/movie5.jpg',title:'破战',score:'3.2', style:'font-weight:bold;color:orange'},
-        {imgUrl:'/imgs/movie6.jpg',title:'年会不能停！',score:'8.1', style:'font-weight:bold;color:orange'},
-        {imgUrl:'/imgs/movie7.jpg',title:'熊出没·逆转时空',score:'6.9', style:'font-weight:bold;color:orange'},
-        {imgUrl:'/imgs/movie8.jpg',title:'金手指',score:'6.2', style:'font-weight:bold;color:orange'},
+        {imgUrl:'/imgs/movie5.jpg',title:'破战',score:'3.2', style:'font-weight:bold;color:orange',commentCount:'(1452评价)',director:'彭发',actor:'吴镇宇 任达华 程媛',minute:'86分钟',area:'中国大陆'},
+        {imgUrl:'/imgs/movie6.jpg',title:'年会不能停！',score:'8.1', style:'font-weight:bold;color:orange',commentCount:'(733973评价)',director:'董润年',actor:'大鹏 白客 庄达菲',minute:'117分钟',area:'中国大陆'},
+        {imgUrl:'/imgs/movie7.jpg',title:'熊出没·逆转时空',score:'6.9', style:'font-weight:bold;color:orange',commentCount:'(15384评价)',director:'林汇达',actor:'谭笑 张秉君 张伟 ',minute:'108分钟',area:'中国大陆'},
+        {imgUrl:'/imgs/movie8.jpg',title:'金手指',score:'6.2', style:'font-weight:bold;color:orange',commentCount:'(97731评价)',director:'庄文强',actor:'梁朝伟 刘德华 蔡卓妍',minute:'125分钟',area:'中国香港'},
       ],
     [
-      {imgUrl:'/imgs/movie9.jpg',title:'八戒之天蓬下界',score:'暂无评分',style:'color:#000'},
-      {imgUrl:'/imgs/movie10.jpg',title:'非诚勿扰3',score:'5.4', style:'font-weight:bold;color:orange'},
-      {imgUrl:'/imgs/movie11.jpg',title:'临时劫案',score:'6.2', style:'font-weight:bold;color:orange'},
-      {imgUrl:'/imgs/movie12.jpg',title:'养蜂人',score:'6.1', style:'font-weight:bold;color:orange'},
+      {imgUrl:'/imgs/movie9.jpg',title:'八戒之天蓬下界',score:'暂无评分',style:'color:#000',commentCount:'',director:'何冉昊',actor:'张磊 季冠霖 赵明洲',minute:'88分钟',area:'中国大陆'},
+      {imgUrl:'/imgs/movie10.jpg',title:'非诚勿扰3',score:'5.4', style:'font-weight:bold;color:orange',commentCount:'(86617评价)',director:'冯小刚',actor:'葛优 舒淇 范伟',minute:'119分钟',area:'中国大陆'},
+      {imgUrl:'/imgs/movie11.jpg',title:'临时劫案',score:'6.2', style:'font-weight:bold;color:orange',commentCount:'(31143评价)',director:'麦启光',actor:'郭富城 林家栋 任贤齐',minute:'97分钟',area:'中国香港'},
+      {imgUrl:'/imgs/movie12.jpg',title:'养蜂人',score:'6.1', style:'font-weight:bold;color:orange',commentCount:'(47290评价)',director:'大卫·阿耶',actor:'杰森·斯坦森 乔什·哈切森',minute:'105分钟',area:'美国'},
     ]
   ]);
 
   const arr2 = ref([
-      {imgUrl:'/imgs/movie1.jpg',title:'开心超人之时空营救',score:'暂无评分',style:'color:#000'},
-      {imgUrl:'/imgs/movie2.jpg',title:'热辣滚烫',score:'7.9',style:'font-weight:bold;color:orange'},
-      {imgUrl:'/imgs/movie3.jpg',title:'第二十条',score:'7.7',style:'font-weight:bold;color:orange'},
-      {imgUrl:'/imgs/movie4.jpg',title:'飞驰人生2',score:'暂无评分',style:'color:#000'},
-      {imgUrl:'/imgs/movie5.jpg',title:'破战',score:'3.2', style:'font-weight:bold;color:orange'},
-      {imgUrl:'/imgs/movie6.jpg',title:'年会不能停！',score:'8.1', style:'font-weight:bold;color:orange'},
-      {imgUrl:'/imgs/movie7.jpg',title:'熊出没·逆转时空',score:'6.9', style:'font-weight:bold;color:orange'},
-      {imgUrl:'/imgs/movie8.jpg',title:'金手指',score:'6.2', style:'font-weight:bold;color:orange'}
+      {imgUrl:'/imgs/movie5.jpg',title:'破战',score:'3.2', style:'font-weight:bold;color:orange',commentCount:'(1452评价)',director:'彭发',actor:'吴镇宇 任达华 程媛',minute:'86分钟',area:'中国大陆'},
+      {imgUrl:'/imgs/movie6.jpg',title:'年会不能停！',score:'8.1', style:'font-weight:bold;color:orange',commentCount:'(733973评价)',director:'董润年',actor:'大鹏 白客 庄达菲',minute:'117分钟',area:'中国大陆'},
+      {imgUrl:'/imgs/movie7.jpg',title:'熊出没·逆转时空',score:'6.9', style:'font-weight:bold;color:orange',commentCount:'(15384评价)',director:'林汇达',actor:'谭笑 张秉君 张伟 ',minute:'108分钟',area:'中国大陆'},
+      {imgUrl:'/imgs/movie8.jpg',title:'金手指',score:'6.2', style:'font-weight:bold;color:orange',commentCount:'(97731评价)',director:'庄文强',actor:'梁朝伟 刘德华 蔡卓妍',minute:'125分钟',area:'中国香港'},
+      {imgUrl:'/imgs/movie9.jpg',title:'八戒之天蓬下界',score:'暂无评分',style:'color:#000',commentCount:'',director:'何冉昊',actor:'张磊 季冠霖 赵明洲',minute:'88分钟',area:'中国大陆'},
+      {imgUrl:'/imgs/movie10.jpg',title:'非诚勿扰3',score:'5.4', style:'font-weight:bold;color:orange',commentCount:'(86617评价)',director:'冯小刚',actor:'葛优 舒淇 范伟',minute:'119分钟',area:'中国大陆'},
+      {imgUrl:'/imgs/movie11.jpg',title:'临时劫案',score:'6.2', style:'font-weight:bold;color:orange',commentCount:'(31143评价)',director:'麦启光',actor:'郭富城 林家栋 任贤齐',minute:'97分钟',area:'中国香港'},
+      {imgUrl:'/imgs/movie12.jpg',title:'养蜂人',score:'6.1', style:'font-weight:bold;color:orange',commentCount:'(47290评价)',director:'大卫·阿耶',actor:'杰森·斯坦森 乔什·哈切森',minute:'105分钟',area:'美国'},
+
   ]);
 
   const bannerArr = ref([
