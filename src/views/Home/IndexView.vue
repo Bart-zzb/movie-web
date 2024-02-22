@@ -41,7 +41,16 @@
             <el-row :gutter="10" >
               <el-col :span="6" v-for="item in arr2" style="margin-bottom:4px;">
                 <el-card align="center" style="padding:0;">
-                  <img :src="item.imgUrl" style="width: 130px;height: 180px">
+                  <el-popover     placement="right-start"
+                                  title="Title"
+                                  :width="200"
+                                  trigger="hover"
+                                  content="this is content, this is content, this is content">
+                    <template #reference>
+                      <img :src="item.imgUrl" style="width: 130px;height: 180px">
+                    </template>
+                  </el-popover>
+
                   <p style="font-size:15px;margin: 3px auto;text-align: center;">{{item.title}}</p>
                   <p style="font-size:13px;margin: 3px auto;text-align: center;" :style="item.style">{{item.score}}</p>
                   <el-button type="primary" size="small"> 选座购票</el-button>
@@ -122,19 +131,19 @@
         <hr>
         <el-row :gutter="10">
          <el-col :span="6" style="text-align: center">
-           <img src="/imgs/icon1.png" width="40px;">
+           <img class="icons" src="/imgs/icon1.png" width="40px;">
            <p style="margin-top: 5px;">微博</p>
          </el-col>
           <el-col :span="6">
-            <img src="/imgs/icon2.png" width="40px;">
+            <img class="icons" src="/imgs/icon2.png" width="40px;">
             <p style="margin-top: 5px;">微信</p>
           </el-col>
           <el-col :span="6">
-            <img src="/imgs/icon3.png" width="40px;">
+            <img class="icons" src="/imgs/icon3.png" width="40px;">
             <p style="margin-top: 5px;">瓣嘴</p>
           </el-col>
           <el-col :span="6">
-            <img src="/imgs/icon4.png" width="40px;">
+            <img class="icons" src="/imgs/icon4.png" width="40px;">
             <p style="margin-top: 5px;">光影club</p>
           </el-col>
         </el-row>
@@ -191,6 +200,11 @@
 </script>
 
 <style scoped>
-
+  .icons {
+    transition: transform 0.3s ease;
+  }
+  .icons:hover{
+    transform: scale(1.1);
+  }
 
 </style>
