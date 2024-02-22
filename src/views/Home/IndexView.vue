@@ -16,7 +16,15 @@
             <el-row :gutter="10" >
              <el-col :span="6" v-for="item in p">
                <el-card align="center" style="padding:0;">
-                 <img :src="item.imgUrl" style="height: 180px">
+                 <el-popover     placement="right-start"
+                                 :title=item.title
+                                 :width="200"
+                                 trigger="hover"
+                                 :content=item.score>
+                   <template #reference>
+                     <img :src="item.imgUrl" style="width: 130px;height: 180px">
+                   </template>
+                 </el-popover>
                  <p style="font-size:15px;margin: 3px auto;text-align: center;">{{item.title}}</p>
                  <p style="font-size:13px;margin: 3px auto;text-align: center;" :style="item.style">{{item.score}}</p>
                  <el-button type="primary" size="small"> 选座购票</el-button>
@@ -42,10 +50,10 @@
               <el-col :span="6" v-for="item in arr2" style="margin-bottom:4px;">
                 <el-card align="center" style="padding:0;">
                   <el-popover     placement="right-start"
-                                  title="Title"
+                                  :title=item.title
                                   :width="200"
                                   trigger="hover"
-                                  content="this is content, this is content, this is content">
+                                  :content=item.score>
                     <template #reference>
                       <img :src="item.imgUrl" style="width: 130px;height: 180px">
                     </template>
