@@ -48,6 +48,7 @@
         </div>
       </el-header>
 
+      <!--首页可变版心-->
       <el-main><router-view/></el-main>
 
       <!--首页共有页尾-->

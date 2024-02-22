@@ -1,16 +1,16 @@
-<!--这是首页-->
+<!--这是首页版心-->
 <template>
   <div style="width: 1080px;margin:30px auto;padding: 0">
     <el-row :gutter="20">
       <!--首页左侧部分-->
       <el-col :span="18">
-        <!--首页热映轮播图 -->
+
+        <!--首页热映轮播图-->
         <el-menu mode="horizontal" style="height: 50px;margin:0px auto;">
           <span style="font-size: 20px; line-height: 50px;">正在热映</span>
           <el-menu-item index="1">全部正在热映»</el-menu-item>
           <el-menu-item index="2">即将上映»</el-menu-item>
         </el-menu>
-
         <el-carousel indicator-position="none" interval="5000">
           <el-carousel-item v-for="p in arr">
             <el-row :gutter="10" >
@@ -73,48 +73,21 @@
           <el-menu-item index="1" style="width: 110px;">更多热门影评»</el-menu-item>
           <el-menu-item index="2" style="width: 75px;">新片影评»</el-menu-item>
         </el-menu>
-        <el-row :gutter="20" style="margin:6px auto;">
+        <el-row :gutter="20" style="margin:6px auto;" v-for="item in commentArr">
           <el-col :span="3">
-            <img src="/imgs/movie3.jpg" style="width: 100%;margin-top: 10px;">
+            <img :src="item.imgUrl" style="width: 100%;margin-top: 10px;">
           </el-col>
           <el-col :span="21">
-            <p style="font-size:20px;margin-top: 10px;margin-bottom: 8px;">来自法律从业者的评价：乌托邦式普法电影</p>
-            <p style="font-size:13px;margin-top: 4px;">南拳猪蛋 评论 《第二十条》 </p>
-            <p style="font-size:15px;">以下是一位来自京城的律师的评价： 昨天看了《第二十条》。感觉五位杂陈，一言难尽。首先用电影形式直接喊出了 法不让与非法 公平正义的口号，这是巨大进步。 但纵观整个电影 底层逻辑完全超现实，太梦幻。检察官...
+            <p style="font-size:20px;margin-top: 10px;margin-bottom: 8px;">{{item.title}}</p>
+            <p style="font-size:13px;margin-top: 4px;">{{item.author}}</p>
+            <p style="font-size:15px;">{{item.comment}}
               <a href="#" style="text-decoration: none;">(全文)</a>
             </p>
+            <hr>
           </el-col>
+
         </el-row>
 
-        <hr>
-
-        <el-row :gutter="20" style="margin:6px auto;">
-          <el-col :span="3">
-            <img src="/imgs/movie7.jpg" style="width: 100%;margin-top: 10px;">
-          </el-col>
-          <el-col :span="21">
-            <p style="font-size:20px;margin-top: 10px;margin-bottom: 8px;">豆瓣评分机制该改改了</p>
-            <p style="font-size:13px;margin-top: 4px;">豆友3aNDCNSMLE 评论 《熊出没·逆转时空》 </p>
-            <p style="font-size:15px;">那些恶意评分的人，我不知道他们看过电影没有，如果看过了来评分的，我觉得再怎么样也不可能给他一个差评，一星两星的，可能是他（她）的童年过得并不好吧，导致他（她）对有关童年的事都很反感，这是一种心理上...
-              <a href="#" style="text-decoration: none;">(全文)</a>
-            </p>
-          </el-col>
-        </el-row>
-
-        <hr>
-
-        <el-row :gutter="20" style="margin:6px auto;">
-          <el-col :span="3">
-            <img src="/imgs/movie4.jpg" style="width: 100%;margin-top: 10px;">
-          </el-col>
-          <el-col :span="21">
-            <p style="font-size:20px;margin-top: 10px;margin-bottom: 8px;">飞驰人生2中的小细节</p>
-            <p style="font-size:13px;margin-top: 4px;">你说呢  评论 《飞驰人生2》 </p>
-            <p style="font-size:15px;">按片中顺序…… 1. 驾校玻璃门原本贴着“冠军教练”，被举/报后，“冠军”没了。厉小海被卖后，“教练”没了。很心疼张驰。 2. 雨中张驰接电话“我不是张驰”似乎有模仿记星口音，加上后面翻车说是孙宇强开翻的，真是背锅二人组。 3. 老头乐的“奔驰小g”字幕是小写，比赛后的...
-              <a href="#" style="text-decoration: none;">(全文)</a>
-            </p>
-          </el-col>
-        </el-row>
       </el-col>
 
       <!--首页右侧部分-->
@@ -210,6 +183,11 @@
     {imgUrl:'/imgs/banner2.jpg',title:'《死侍3》 首支中字预告',content:'死侍与金刚狼回归! 7月26日北美上映.'}
   ]);
 
+  const commentArr = ref([
+    {imgUrl:'/imgs/movie3.jpg',title:'来自法律从业者的评价：乌托邦式普法电影',author:'南拳猪蛋 评论 《第二十条》 ',comment:'以下是一位来自京城的律师的评价： 昨天看了《第二十条》。感觉五位杂陈，一言难尽。首先用电影形式直接喊出了 法不让与非法 公平正义的口号，这是巨大进步。 但纵观整个电影 底层逻辑完全超现实，太梦幻。检察官...'},
+    {imgUrl:'/imgs/movie7.jpg',title:'豆瓣评分机制该改改了',author:'豆友3aNDCNSMLE 评论 《熊出没·逆转时空》 ',comment:'那些恶意评分的人，我不知道他们看过电影没有，如果看过了来评分的，我觉得再怎么样也不可能给他一个差评，一星两星的，可能是他（她）的童年过得并不好吧，导致他（她）对有关童年的事都很反感，这是一种心理上...'},
+    {imgUrl:'/imgs/movie4.jpg',title:'飞驰人生2中的小细节',author:'你说呢  评论 《飞驰人生2》 ',comment:'按片中顺序…… 1. 驾校玻璃门原本贴着“冠军教练”，被举/报后，“冠军”没了。厉小海被卖后，“教练”没了。很心疼张驰。 2. 雨中张驰接电话“我不是张驰”似乎有模仿记星口音，加上后面翻车说是孙宇强开翻的，真是背锅二人组。 3. 老头乐的“奔驰小g”字幕是小写，比赛后的...'},
+  ]);
 </script>
 
 <style scoped>
