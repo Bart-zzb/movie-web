@@ -20,7 +20,9 @@
                                  :title=item.title
                                  :width="200"
                                  trigger="hover"
-                                 :content=item.score>
+                                 >
+                   <p>{{item.minute}}&emsp;{{item.area}}</p>
+                   <p>{{item.actor}}</p>
                    <template #reference>
                      <img :src="item.imgUrl" style="width: 130px;height: 180px">
                    </template>
@@ -166,7 +168,7 @@
   const arr = ref([
       [
         {imgUrl:'/imgs/movie1.jpg',title:'开心超人之时空营救',score:'暂无评分',style:'color:#000'},
-        {imgUrl:'/imgs/movie2.jpg',title:'热辣滚烫',score:'7.9',style:'font-weight:bold;color:orange'},
+        {imgUrl:'/imgs/movie2.jpg',title:'热辣滚烫',score:'7.9',style:'font-weight:bold;color:orange',actor:'主演: 贾玲 雷佳音 张小斐',minute:'片长: 129分钟',area:'中国大陆'},
         {imgUrl:'/imgs/movie3.jpg',title:'第二十条',score:'7.7',style:'font-weight:bold;color:orange'},
         {imgUrl:'/imgs/movie4.jpg',title:'飞驰人生2',score:'暂无评分',style:'color:#000'},
       ],
